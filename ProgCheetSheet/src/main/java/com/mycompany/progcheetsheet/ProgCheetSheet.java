@@ -11,7 +11,11 @@ package com.mycompany.progcheetsheet;
 ================================================================
 JAVA FULL CHEAT SHEET - MOCK EXAM REVISION
 ================================================================
-Topics Covered:
+
+TABLE OF CONTENTS
+----------------------------------------------------------------
+SECTION   TOPIC
+----------------------------------------------------------------
   0.  Imports (and cool tricks you can use in imports like *)
   1.  Printing (println, print, printf)
   2.  Variables & Data Types
@@ -22,24 +26,33 @@ Topics Covered:
   7.  While Loop
   8.  Do-While Loop
   9.  Single-Dimensional Arrays
-  10. Two-Dimensional Arrays
-  11. ArrayList
-  12. Methods (with arguments & return values)
-  13. Classes & Objects (Creating Objects)
-  14. Constructors
-  15. Getters & Setters
-  16. Encapsulation
-  17. Inheritance (extends, super)
-  18. Abstract Classes
-  19. Concrete Classes
-  20. Interfaces
-  21. Polymorphism
-  22. Try-Catch (Error Handling)
-  23. Scanner (Keyboard Input)
-  24. JOptionPane (showInputDialog & showMessageDialog)
-  25. Parsing with Integer.parseInt & Double.parseDouble
-  26. DecimalFormat (Formatting to .00)
-  27. Validations (Input, Range, Null)
+ 10.  Two-Dimensional Arrays
+ 11.  ArrayList
+ 12.  Methods (with arguments & return values)
+ 13.  Classes & Objects (Creating Objects)
+ 14.  Constructors
+ 15.  Getters & Setters
+ 16.  Encapsulation
+ 17.  Inheritance (extends, super)
+ 18.  Abstract Classes
+ 19.  Concrete Classes
+ 20.  Interfaces
+ 21.  Polymorphism
+ 22.  Try-Catch (Error Handling)
+ 23.  Scanner (Keyboard Input)
+ 24.  JOptionPane (showInputDialog & showMessageDialog)
+ 25.  Parsing with Integer.parseInt & Double.parseDouble
+ 26.  DecimalFormat (Formatting to .00)
+ 27.  Validations (Input, Range, Null)
+ 28.  Alternative Ways of Parsing Items Using Arrays
+ 29.  OOP Chain: Interface -> Abstract -> Concrete -> Main
+ 30.  Finding the Highest - Manual vs Loop
+ 31.  Grand Total Across a 2D Array
+ 32.  Full Report Formatting (Exact Output Match)
+ 33.  Comments + File Saving (Rubric Marks)
+ 34.  Summary Table - Which One Do I Use?
+ 35.  Exam Tips (Very Important)
+----------------------------------------------------------------
 
 ================================================================
 0. IMPORTS (PUT AT TOP OF EVERY FILE)
@@ -65,8 +78,8 @@ INDIVIDUAL IMPORTS (if your examiner prefers specific ones):
     import java.util.ArrayList;
     import javax.swing.JOptionPane;
     import java.text.DecimalFormat;
-    import java.io.FileWriter;          
-          
+    import java.io.FileWriter;
+
 
 ================================================================
 1. PRINTING TO SCREEN
@@ -1021,7 +1034,556 @@ THE GOLDEN RULE:
 
 
 ================================================================
-SUMMARY TABLE - WHICH ONE DO I USE?
+28. ALTERNATIVE WAYS OF PARSING ITEMS USING ARRAYS
+================================================================
+There are TWO main ways to store and process table-style data.
+Both work. The 2D array version is what most lecturers prefer
+for report questions. The 1D-grouped version also works and
+is easier to write if you already know the values.
+
+----------------------------------------------------------------
+METHOD 1: 2D ARRAY + PARALLEL 1D ARRAYS (LECTURER STYLE)
+----------------------------------------------------------------
+This is the cleaner, more "proper" way for questions that give
+you a TABLE (e.g. runs per batsman per stadium, sales per
+product per month, accidents per city per vehicle type).
+
+CODE:
+
+    import java.util.Scanner;
+
+    Scanner scan = new Scanner(System.in);
+
+    // 1. 1D arrays for the LABELS (names)
+    String[] batsmen  = {"Jacques Kallis", "Hashim Amla", "AB de Villiers"};
+    String[] stadiums = {"KINGSMEAD", "ST GEORGES", "WANDERERS"};
+
+    // 2. 2D array for the DATA
+    //    rows = stadiums, columns = batsmen
+    int[][] runs = new int[3][3];
+
+    System.out.println("SA CRICKETER APPLICATION");
+    System.out.println("--------------------------------------------------");
+
+    // 3. Populate the 2D array with a NESTED LOOP
+    for (int i = 0; i < stadiums.length; i++) {        // rows
+        for (int j = 0; j < batsmen.length; j++) {     // cols
+            System.out.print("Enter the number of runs scored by "
+                + batsmen[j] + " at " + stadiums[i] + ": ");
+            runs[i][j] = scan.nextInt();
+        }
+    }
+
+WHAT IT DOES:
+    - The 1D arrays hold the LABELS (who / where).
+    - The 2D array holds the NUMBERS (runs / sales / marks).
+    - runs[i][j] = row i (stadium), column j (batsman).
+    - .length on 2D array = number of ROWS.
+
+HOW TO DECIDE ROWS vs COLUMNS:
+    Outer loop thing  -> ROWS    (stadiums, cities, months)
+    Inner loop thing  -> COLUMNS (people, products, items)
+
+HOW TO PRINT IT NEATLY (header row + labels):
+
+    // Header
+    System.out.printf("%-15s", "STADIUM");
+    for (String b : batsmen) {
+        System.out.printf("%-18s", b);
+    }
+    System.out.println();
+
+    // Rows
+    for (int i = 0; i < runs.length; i++) {
+        System.out.printf("%-15s", stadiums[i]);
+        for (int j = 0; j < runs[i].length; j++) {
+            System.out.printf("%-18d", runs[i][j]);
+        }
+        System.out.println();
+    }
+
+HOW TO PASS THE WHOLE TABLE TO A METHOD:
+
+    // Method signature - takes the 2D array + the label arrays
+    public static void TotalRuns(int[][] runs, String[] batsmen) {
+        for (int j = 0; j < batsmen.length; j++) {
+            int total = 0;
+            for (int i = 0; i < runs.length; i++) {
+                total += runs[i][j];      // sum down the COLUMN
+            }
+            System.out.println(batsmen[j] + " total: " + total);
+        }
+    }
+
+    // Calling it from main:
+    TotalRuns(runs, batsmen);
+
+----------------------------------------------------------------
+METHOD 2: MULTIPLE 1D ARRAYS GROUPED PER PERSON (YOUR STYLE)
+----------------------------------------------------------------
+This is what you used in your mock exam. It also works and is
+quick to write when you already know the values.
+
+CODE:
+
+    int[] kings   = {kingsRun, kingsRun1, kingsRun2};
+    int[] george  = {georgeRun, georgeRun1, georgeRun2};
+    int[] wanders = {wanderRun, wanderRun1, wanderRun2};
+
+    PlaceRuns(kings, george, wanders);
+    TotalRuns(kings, george, wanders);
+    HighestRuns(kings, george, wanders);
+
+    // Method that accepts three 1D arrays:
+    public static void TotalRuns(int[] k, int[] g, int[] w) {
+        int total = 0;
+        for (int i = 0; i < k.length; i++) total += k[i];
+        for (int i = 0; i < g.length; i++) total += g[i];
+        for (int i = 0; i < w.length; i++) total += w[i];
+        System.out.println("Grand total: " + total);
+    }
+
+PROS / CONS:
+
+    2D array (lecturer style):
+       + One variable, one method, clean loops
+       + Easy to add rows/columns
+       + Looks professional in an exam
+       - Need to think about rows vs columns
+
+    Multiple 1D arrays (your mock exam style):
+       + Quick to write if you already know the values
+       + Easy to read for a human
+       - Many variables, many method parameters
+       - Harder to loop across everything at once
+
+----------------------------------------------------------------
+METHOD 3: 2D ARRAY + PARSING FROM JOPTIONPANE
+----------------------------------------------------------------
+Same idea as Method 1, but using JOptionPane + parseDouble /
+parseInt instead of Scanner. This is very common in exams.
+
+CODE:
+
+    import javax.swing.*;
+    import java.text.DecimalFormat;
+
+    DecimalFormat df = new DecimalFormat("0.00");
+
+    String[] products = {"Laptop", "Phone", "Tablet"};
+    String[] months   = {"January", "February", "March"};
+
+    double[][] sales = new double[3][3];
+
+    // Populate with JOptionPane + parsing + try-catch
+    for (int i = 0; i < months.length; i++) {
+        for (int j = 0; j < products.length; j++) {
+            String input = JOptionPane.showInputDialog(
+                "Enter sales for " + products[j] + " in " + months[i] + ":");
+            try {
+                sales[i][j] = Double.parseDouble(input);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Invalid number!");
+                sales[i][j] = 0;
+            }
+        }
+    }
+
+    // Print a report
+    String report = String.format("%-12s", "MONTH");
+    for (String p : products) {
+        report += String.format("%-12s", p);
+    }
+    report += "\n";
+
+    for (int i = 0; i < sales.length; i++) {
+        report += String.format("%-12s", months[i]);
+        for (int j = 0; j < sales[i].length; j++) {
+            report += String.format("%-12s", df.format(sales[i][j]));
+        }
+        report += "\n";
+    }
+    JOptionPane.showMessageDialog(null, report);
+
+----------------------------------------------------------------
+EXAM DECISION GUIDE
+----------------------------------------------------------------
+    Question gives a TABLE          -> use 2D array (Method 1 or 3)
+    Question gives SEPARATE LISTS   -> use 1D arrays (Method 2)
+    Console input                   -> Scanner
+    GUI input                       -> JOptionPane + parse
+    Money / averages                -> DecimalFormat("0.00")
+    Neat columns                    -> printf with %-15s / %-15d
+    When in doubt                   -> 2D array scores more marks
+
+
+================================================================
+29. OOP CHAIN: INTERFACE -> ABSTRACT -> CONCRETE -> MAIN
+================================================================
+This is the EXACT pattern from Mock Test Q2. You will likely
+see this again. Memorize the chain:
+
+    interface  ->  abstract class implements interface
+               ->  concrete class extends abstract class
+               ->  main class instantiates concrete class
+
+CODE - INTERFACE:
+
+    public interface ICricket {
+        String getBatsman();
+        String getStadium();
+        int getRunsScored();
+    }
+
+CODE - ABSTRACT CLASS IMPLEMENTING INTERFACE:
+
+    public abstract class Cricket implements ICricket {
+        protected String batsman;
+        protected String stadium;
+        protected int runsScored;
+
+        // Constructor
+        public Cricket(String batsman, String stadium, int runsScored) {
+            this.batsman = batsman;
+            this.stadium = stadium;
+            this.runsScored = runsScored;
+        }
+
+        // Implement interface methods
+        @Override
+        public String getBatsman() { return batsman; }
+
+        @Override
+        public String getStadium() { return stadium; }
+
+        @Override
+        public int getRunsScored() { return runsScored; }
+
+        // Abstract method - child MUST implement
+        public abstract void printReport();
+    }
+
+CODE - CONCRETE CLASS EXTENDING ABSTRACT CLASS:
+
+    public class CricketRunScored extends Cricket {
+
+        public CricketRunScored(String batsman, String stadium, int runsScored) {
+            super(batsman, stadium, runsScored);
+        }
+
+        @Override
+        public void printReport() {
+            System.out.println("BATSMAN RUNS SCORED REPORT");
+            System.out.println("**************************");
+            System.out.println("CRICKET PLAYER: " + batsman);
+            System.out.println("STADIUM: " + stadium);
+            System.out.println("TOTAL RUNS SCORED: " + runsScored);
+        }
+    }
+
+CODE - MAIN CLASS (RunApplication):
+
+    import javax.swing.JOptionPane;
+
+    public class RunApplication {
+        public static void main(String[] args) {
+            String batsman = JOptionPane.showInputDialog(
+                "Enter the batsman name:");
+            String stadium = JOptionPane.showInputDialog(
+                "Enter the stadium name:");
+            String runsText = JOptionPane.showInputDialog(
+                "Enter the runs scored:");
+            int runs = Integer.parseInt(runsText);
+
+            CricketRunScored c = new CricketRunScored(batsman, stadium, runs);
+            c.printReport();
+        }
+    }
+
+WHAT IT DOES:
+    - ICricket defines the CONTRACT (3 getters).
+    - Cricket implements the getters and holds the data.
+    - CricketRunScored writes the actual printReport().
+    - RunApplication creates the object and calls printReport().
+
+WHEN TO USE IT:
+    - When the question says "create an interface" AND "abstract class"
+      AND "subclass" — this is the exact chain they want.
+    - When the rubric mentions "implements interface", "extends
+      abstract class", and "instantiates the class".
+
+EXAM TIP:
+    Always check: does the abstract class need to implement the
+    interface methods? YES — unless the concrete class does it.
+    In Q2, the abstract class implemented the getters, and the
+    concrete class implemented printReport().
+
+
+================================================================
+30. FINDING THE HIGHEST - MANUAL vs LOOP
+================================================================
+Both work, but the LOOP way is what the rubric wants because
+it scales to any number of rows/columns.
+
+----------------------------------------------------------------
+WAY 1: MANUAL COMPARISON (quick, but hard-coded)
+----------------------------------------------------------------
+Best when you have a SMALL, FIXED number of arrays and you
+already know the values.
+
+CODE (your mock exam style):
+
+    public static void HighestRuns(int[] kings, int[] george,
+                                   int[] wanders) {
+
+        int kingTotal   = (kings[0]   + kings[1]   + kings[2]);
+        int georgeTotal = (george[0]  + george[1]  + george[2]);
+        int wanderTotal = (wanders[0] + wanders[1] + wanders[2]);
+
+        if (kingTotal > georgeTotal && kingTotal > wanderTotal) {
+            System.out.println("Stadium with the most runs: Kingsmead");
+        } else if (georgeTotal > kingTotal && georgeTotal > wanderTotal) {
+            System.out.println("Stadium with the most runs: St Georges");
+        } else if (wanderTotal > kingTotal && wanderTotal > georgeTotal) {
+            System.out.println("Stadium with the most runs: Wanderers");
+        }
+    }
+
+PROS:
+    + Easy to read for a human.
+    + No loops needed if the values are already known.
+
+CONS:
+    - HARD-CODED: breaks if the number of stadiums changes.
+    - Repeats the same sum logic 3 times.
+    - Typo-prone: one wrong index and it fails.
+    - Does nothing if two stadiums TIE.
+    - Rubric usually wants a LOOP, not an if/else chain.
+
+----------------------------------------------------------------
+WAY 2: LOOP + TRACK THE MAX (rubric-preferred)
+----------------------------------------------------------------
+Works for ANY number of rows/columns. This is what the
+lecturer wants for "find the highest" questions.
+
+CODE (2D array version):
+
+    public static void HighestRuns(int[][] runs, String[] stadiums) {
+        int maxTotal = 0;        // start at 0
+        int maxIndex = 0;        // remember WHICH row was max
+
+        for (int i = 0; i < runs.length; i++) {
+            int rowTotal = 0;
+            for (int j = 0; j < runs[i].length; j++) {
+                rowTotal += runs[i][j];   // sum the row
+            }
+            if (rowTotal > maxTotal) {    // new highest?
+                maxTotal = rowTotal;
+                maxIndex = i;             // remember the row
+            }
+        }
+
+        System.out.println("Stadium with the most runs: "
+            + stadiums[maxIndex]);
+    }
+
+CODE (multiple 1D arrays version - if you must use your style):
+
+    public static void HighestRuns(int[] kings, int[] george,
+                                   int[] wanders) {
+
+        // Put the arrays and their names into parallel arrays
+        int[][] allRuns = { kings, george, wanders };
+        String[] names  = { "Kingsmead", "St Georges", "Wanderers" };
+
+        int maxTotal = 0;
+        int maxIndex = 0;
+
+        for (int i = 0; i < allRuns.length; i++) {
+            int rowTotal = 0;
+            for (int j = 0; j < allRuns[i].length; j++) {
+                rowTotal += allRuns[i][j];
+            }
+            if (rowTotal > maxTotal) {
+                maxTotal = rowTotal;
+                maxIndex = i;
+            }
+        }
+
+        System.out.println("Stadium with the most runs: "
+            + names[maxIndex]);
+    }
+
+WHAT IT DOES:
+    - Start with maxTotal = 0 and maxIndex = 0.
+    - Loop through every row, sum it, and check if it beats maxTotal.
+    - If yes, update BOTH maxTotal and maxIndex.
+    - After the loop, maxIndex points to the winning row.
+    - Use maxIndex to get the LABEL from the parallel name array.
+
+WHEN TO USE IT:
+    - "Find the highest / most / best / top..."
+    - "Which stadium / city / person had the most..."
+    - "Determine the maximum value..."
+    - ANY time the number of rows could change.
+
+MINIMUM VERSION:
+    Same code, but:
+        int minTotal = Integer.MAX_VALUE;
+        int minIndex = 0;
+        if (rowTotal < minTotal) { ... }
+
+TIE-HANDLING:
+    The loop version keeps the FIRST max it finds.
+    If you want to print ALL ties, change the if to:
+        if (rowTotal > maxTotal) { maxTotal = rowTotal; maxIndex = i; }
+        else if (rowTotal == maxTotal) { /* print tie */ }
+
+----------------------------------------------------------------
+WHICH ONE SHOULD YOU USE IN THE EXAM?
+----------------------------------------------------------------
+    Question says "using arrays" or "2D array"  -> WAY 2 (loop)
+    Question gives a small FIXED set of values  -> either works
+    You're not sure                              -> WAY 2 (loop)
+    You want full marks on the rubric            -> WAY 2 (loop)
+
+
+================================================================
+31. GRAND TOTAL ACROSS A 2D ARRAY
+================================================================
+Q1 asks for "TOTAL RUNS AT STADIUMS". You need to sum
+everything in the 2D array.
+
+CODE - TOTAL ALL VALUES:
+
+    int grandTotal = 0;
+    for (int i = 0; i < runs.length; i++) {
+        for (int j = 0; j < runs[i].length; j++) {
+            grandTotal += runs[i][j];
+        }
+    }
+    System.out.println("TOTAL RUNS: " + grandTotal);
+
+CODE - TOTAL PER STADIUM (row totals):
+
+    for (int i = 0; i < runs.length; i++) {
+        int rowTotal = 0;
+        for (int j = 0; j < runs[i].length; j++) {
+            rowTotal += runs[i][j];
+        }
+        System.out.println(stadiums[i] + " total: " + rowTotal);
+    }
+
+CODE - TOTAL PER BATSMAN (column totals):
+
+    for (int j = 0; j < batsmen.length; j++) {
+        int colTotal = 0;
+        for (int i = 0; i < runs.length; i++) {
+            colTotal += runs[i][j];
+        }
+        System.out.println(batsmen[j] + " total: " + colTotal);
+    }
+
+WHAT IT DOES:
+    - ROW total = loop j inside i (sum across columns)
+    - COLUMN total = loop i inside j (sum down rows)
+    - GRAND total = both loops, one accumulator
+
+WHEN TO USE IT:
+    - "Calculate the total..."
+    - "Sum of all..."
+    - "Total per person / per city / per month"
+
+
+================================================================
+32. FULL REPORT FORMATTING (EXACT OUTPUT MATCH)
+================================================================
+Both Q1 and Q2 require matching the sample output EXACTLY.
+Marks are lost for wrong dashes, asterisks, or spacing.
+
+CODE - REPORT WITH DASHES AND ASTERISKS:
+
+    System.out.println("BATSMAN RUNS SCORED REPORT");
+    System.out.println("**************************");
+    System.out.println("CRICKET PLAYER: " + batsman);
+    System.out.println("STADIUM: " + stadium);
+    System.out.println("TOTAL RUNS SCORED: " + runsScored);
+
+CODE - TABLE WITH HEADER ROW AND ALIGNED COLUMNS:
+
+    // Header
+    System.out.printf("%-15s", "STADIUM");
+    for (String b : batsmen) {
+        System.out.printf("%-18s", b);
+    }
+    System.out.println();
+
+    // Data rows
+    for (int i = 0; i < runs.length; i++) {
+        System.out.printf("%-15s", stadiums[i]);
+        for (int j = 0; j < runs[i].length; j++) {
+            System.out.printf("%-18d", runs[i][j]);
+        }
+        System.out.println();
+    }
+
+CODE - SEPARATOR LINES:
+
+    System.out.println("--------------------------------------------------");
+    System.out.println("==================================================");
+
+WHAT IT DOES:
+    - printf with %-15s left-aligns text in 15 chars.
+    - %-18d left-aligns numbers in 18 chars.
+    - Always print the header BEFORE the data rows.
+    - Count your dashes/asterisks to match the sample.
+
+WHEN TO USE IT:
+    - ALWAYS when the question shows a sample output.
+    - When the rubric says "as per the sample".
+
+EXAM TIP:
+    Copy the sample output's dashes and asterisks CHARACTER FOR
+    CHARACTER. If the sample has 50 dashes, you type 50 dashes.
+    Count them once, then use the same string everywhere.
+
+
+================================================================
+33. COMMENTS + FILE SAVING (RUBRIC MARKS)
+================================================================
+The rubric gives 5 marks for "application files saved correctly
+with comments". Don't lose these free marks!
+
+RULES:
+    - Save each class in its OWN file with the SAME name.
+      e.g., Cricket.java, ICricket.java, CricketRunScored.java,
+            RunApplication.java
+    - Add a comment at the TOP of each file:
+        /*
+         * Name: [Your Name]
+         * Student Number: [Your Number]
+         * Question: [Q1 / Q2]
+         */
+    - Add a comment above each method explaining what it does.
+    - Add inline comments for tricky lines.
+
+EXAMPLE:
+    // This method calculates the total runs per stadium
+    public static void TotalRuns(int[][] runs, String[] stadiums) {
+        // Loop through each row (stadium)
+        for (int i = 0; i < runs.length; i++) {
+            int total = 0;
+            // Sum the columns (batsmen) for this stadium
+            for (int j = 0; j < runs[i].length; j++) {
+                total += runs[i][j];
+            }
+            System.out.println(stadiums[i] + ": " + total);
+        }
+    }
+
+
+================================================================
+34. SUMMARY TABLE - WHICH ONE DO I USE?
 ================================================================
 
 TASK                          | TOOL
@@ -1044,20 +1606,51 @@ Reuse parent code             | extends + super()
 Force methods in child        | interface or abstract method
 Same method, different output | Polymorphism (@Override)
 
+----------------------------------------------------------------
+ARRAY PARSING - WHICH ARRAY DO I USE?
+----------------------------------------------------------------
+
+TASK                                | TOOL
+------------------------------------|---------------------------------
+Table data (rows x columns)         | 2D array   int[][] grid
+One list of items                   | 1D array   int[] marks
+Labels for a table (names)          | parallel 1D String[] arrays
+Numbers for a table                 | 2D int[][] / double[][]
+Rows = outer loop                   | for (int i = 0; ...)
+Columns = inner loop                | for (int j = 0; ...)
+Number of rows                      | grid.length
+Number of columns in row i          | grid[i].length
+Sum a whole column                  | loop rows, add grid[i][j]
+Sum a whole row                     | loop columns, add grid[i][j]
+Find highest in a row/column        | track max inside nested loop
+Pass a whole table to a method      | method(int[][] grid, String[] labels)
+Populate 2D array with Scanner      | nested loop + scan.nextInt()
+Populate 2D array with JOptionPane  | nested loop + parse + try-catch
+Print a neat table                  | printf("%-15s", ...) header + rows
+Group per person (your mock style)  | separate 1D arrays per person
+
 
 ================================================================
-EXAM TIPS (VERY IMPORTANT)
+35. EXAM TIPS (VERY IMPORTANT)
 ================================================================
-1. ALWAYS check for null after JOptionPane input.
-2. ALWAYS wrap parseInt / parseDouble in try-catch.
-3. ALWAYS use DecimalFormat for money (not casting).
-4. NEVER use (double) or (int) casting for Strings — parse instead.
-5. Use printf or DecimalFormat for neat tables.
-6. Use for-each when you don't need the index.
-7. Use normal for when you need the index (i).
-8. Use .length for arrays (no parens) and .size() for ArrayList.
-9. Use super() as the FIRST line in a child constructor.
+1.  ALWAYS check for null after JOptionPane input.
+2.  ALWAYS wrap parseInt / parseDouble in try-catch.
+3.  ALWAYS use DecimalFormat for money (not casting).
+4.  NEVER use (double) or (int) casting for Strings — parse instead.
+5.  Use printf or DecimalFormat for neat tables.
+6.  Use for-each when you don't need the index.
+7.  Use normal for when you need the index (i).
+8.  Use .length for arrays (no parens) and .size() for ArrayList.
+9.  Use super() as the FIRST line in a child constructor.
 10. Match the sample output EXACTLY — dashes, asterisks, spacing.
+11. If the question gives a TABLE, use a 2D array (not many 1D ones).
+12. Rows = outer loop, Columns = inner loop. Never mix them up.
+13. Use parallel 1D arrays for LABELS (names) next to a 2D array for NUMBERS.
+14. Pass the WHOLE 2D array to a method — don't pass single values one by one.
+15. When summing, check whether you need to sum a ROW (loop j) or a COLUMN (loop i).
+16. Print a HEADER ROW first when printing a table, then loop the rows.
+17. Use %-15s or %-15d so columns line up neatly — uneven spacing loses marks.
+18. Always use the correct index order: grid[row][column], not grid[column][row].
 
 ================================================================
 END OF CHEAT SHEET
