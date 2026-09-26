@@ -52,3 +52,26 @@
 <div>
 <img width="503" height="458" alt="Screenshot 2026-09-22 110510" src="https://github.com/user-attachments/assets/3002b9a2-dd9e-40a4-bed1-e216b0ee83ca" />
 </div>
+
+## 2026 Mock Test Screenshots
+
+###Question 1
+<div>
+  <img width="469" height="355" alt="Screenshot 2026-09-26 151402" src="https://github.com/user-attachments/assets/791ab872-efd3-44b0-ab81-b8218c96a2b4" />
+</div>
+<img width="469" height="355" alt="Screenshot 2026-09-26 151402" src="https://github.com/user-attachments/assets/5f65072b-c804-4258-a0be-6257946bac81" />
+</div>
+
+<div>
+  <img width="386" height="576" alt="Screenshot 2026-09-26 151432" src="https://github.com/user-attachments/assets/371e42dc-b4a2-4500-89d0-eb8b1b8bf7e9" />
+</div>
+
+
+###Question 2
+<div>
+  <img width="376" height="486" alt="Screenshot 2026-09-26 151917" src="https://github.com/user-attachments/assets/e3e8d5b3-7cf7-4d15-ae77-1c6c064ee2d0" />
+</div>
+
+<div>
+  <img width="380" height="569" alt="Screenshot 2026-09-26 151930" src="https://github.com/user-attachments/assets/6d9a7edd-f095-4d83-9f7c-b2768b112141" />
+</div>
