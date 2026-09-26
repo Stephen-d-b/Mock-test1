@@ -55,7 +55,7 @@
 
 ## 2026 Mock Test Screenshots
 
-###Question 1
+### Question 1
 <div>
   <img width="469" height="355" alt="Screenshot 2026-09-26 151402" src="https://github.com/user-attachments/assets/791ab872-efd3-44b0-ab81-b8218c96a2b4" />
 </div>
@@ -67,7 +67,7 @@
 </div>
 
 
-###Question 2
+### Question 2
 <div>
   <img width="376" height="486" alt="Screenshot 2026-09-26 151917" src="https://github.com/user-attachments/assets/e3e8d5b3-7cf7-4d15-ae77-1c6c064ee2d0" />
 </div>
