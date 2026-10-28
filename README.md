@@ -28,7 +28,7 @@ This Java application records and displays road accidents for cars and motorbike
 </div>
 
 <div>
-<img width="490" height="642" alt="Screenshot 2026-09-22 103419" src="https://github.com/user-attachments/assets/f129b318-6fc1-464b-a14b-57d8038d45a7" />
+<img width="755" height="503" alt="Screenshot 2026-09-22 103429" src="https://github.com/user-attachments/assets/4e23a5dd-8596-4721-a2ef-b034d8487afd" />
 </div>
 
 ---
@@ -47,7 +47,7 @@ This is a console application designed to print a vehicle accident report. It de
 ### Question 2 Screenshots
 
 <div>
-<img width="755" height="503" alt="Screenshot 2026-09-22 103429" src="https://github.com/user-attachments/assets/4e23a5dd-8596-4721-a2ef-b034d8487afd" />
+<img width="490" height="642" alt="Screenshot 2026-09-22 103419" src="https://github.com/user-attachments/assets/f129b318-6fc1-464b-a14b-57d8038d45a7" />
 </div>
 
 <div>
@@ -76,10 +76,6 @@ This Java application generates a 6-month home makeover report. It calculates th
 </div>
 
 <div>
-<img width="505" height="682" alt="Screenshot 2026-09-22 110435" src="https://github.com/user-attachments/assets/58210335-4239-4e4d-bded-3041f07f0a43" />
-</div>
-
-<div>
 <img width="533" height="759" alt="Screenshot 2026-09-22 110445" src="https://github.com/user-attachments/assets/105e83d5-f8f0-4a9b-8ead-a071b9fe2a36" />
 </div>
 
@@ -101,6 +97,10 @@ A console application to determine if a store needs to hire more staff based on 
 *   **Subclass**: `StaffHiring` extends `Staff` and implements the `printStaffHiring()` method.
 
 ### Question 2 Screenshots
+
+<div>
+<img width="505" height="682" alt="Screenshot 2026-09-22 110435" src="https://github.com/user-attachments/assets/58210335-4239-4e4d-bded-3041f07f0a43" />
+</div>
 
 <div>
 <img width="514" height="741" alt="Screenshot 2026-09-22 110504" src="https://github.com/user-attachments/assets/f9f42a01-6ed8-40c3-8921-7f87d516eca6" />
