@@ -1,9 +1,23 @@
 # Mock Test 1
 
+This repository contains the screenshots, documentation, and Java solutions for various mock tests.
 
 ---
 
-## 2024 Mock Test Screenshots
+# 2024 Mock Test (Road Accidents)
+
+## Question 1: Road Accident Report (Arrays)
+
+### 📋 Question 1 Project Overview
+
+This Java application records and displays road accidents for cars and motorbikes across three different cities. It uses a single-dimensional array for the city names and a two-dimensional array for the accident data.
+
+**Features:**
+*   **Console Input**: Prompts the user to enter accident data for each city.
+*   **2D Array Processing**: Loops through the data to calculate the total accidents per city.
+*   **Logic Decision**: Determines which city has the highest number of accidents and prints it.
+
+### Question 1 Screenshots
 
 <div>
 <img width="553" height="522" alt="Screenshot 2026-09-22 103332" src="https://github.com/user-attachments/assets/ad1b6975-b7c1-42bf-9d32-b12c3c5a9843" />
@@ -17,6 +31,21 @@
 <img width="490" height="642" alt="Screenshot 2026-09-22 103419" src="https://github.com/user-attachments/assets/f129b318-6fc1-464b-a14b-57d8038d45a7" />
 </div>
 
+---
+
+## Question 2: OOP Hierarchy (Interfaces & Abstract Classes)
+
+### 📋 Question 2 Project Overview
+
+This is a console application designed to print a vehicle accident report. It demonstrates a full Object-Oriented hierarchy using an Interface, an Abstract Class, and a Concrete Subclass.
+
+**Features:**
+*   **Interface**: `IRoadAccidents` enforces the getter methods.
+*   **Abstract Class**: `RoadAccidents` stores the variables and implements the interface.
+*   **Subclass**: `RoadAccidentReport` extends the abstract class and contains the print method.
+
+### Question 2 Screenshots
+
 <div>
 <img width="755" height="503" alt="Screenshot 2026-09-22 103429" src="https://github.com/user-attachments/assets/4e23a5dd-8596-4721-a2ef-b034d8487afd" />
 </div>
@@ -27,7 +56,20 @@
 
 ---
 
-## 2022 Mock Test Screenshots
+# 2022 Mock Test (Home Makeover & Staff Hiring)
+
+## Question 1: Home Makeover Report (Arrays)
+
+### 📋 Question 1 Project Overview
+
+This Java application generates a 6-month home makeover report. It calculates the total jobs per month and displays a visual indicator (`***`) if the total meets or exceeds 15.
+
+**Features:**
+*   **Single & Multi-Dimensional Arrays**: Uses a 1D array for months and a 2D array for the job counts (Bathrooms, Kitchens, Gardens).
+*   **Loops**: Iterates through the arrays to print the rows and calculate monthly totals.
+*   **Decision Making**: Uses `if` statements to check if totals are `>= 15` and appends stars to the output.
+
+### Question 1 Screenshots
 
 <div>
 <img width="474" height="711" alt="Screenshot 2026-09-22 110419" src="https://github.com/user-attachments/assets/502e1ab4-3534-4119-82c4-c2273d7d9496" />
@@ -45,6 +87,21 @@
 <img width="483" height="392" alt="Screenshot 2026-09-22 110454" src="https://github.com/user-attachments/assets/285bea5a-014a-463e-831b-7fe55ec77301" />
 </div>
 
+---
+
+## Question 2: Staff Hiring (OOP)
+
+### 📋 Question 2 Project Overview
+
+A console application to determine if a store needs to hire more staff based on a limit of 20 members. Demonstrates inheritance and interfaces.
+
+**Features:**
+*   **Interface**: `iStaff` contains the method signatures.
+*   **Abstract Class**: `Staff` stores the number and location, and implements `iStaff`.
+*   **Subclass**: `StaffHiring` extends `Staff` and implements the `printStaffHiring()` method.
+
+### Question 2 Screenshots
+
 <div>
 <img width="514" height="741" alt="Screenshot 2026-09-22 110504" src="https://github.com/user-attachments/assets/f9f42a01-6ed8-40c3-8921-7f87d516eca6" />
 </div>
@@ -54,9 +111,21 @@
 </div>
 
 ---
-## 2021 Test Screenshots
 
-### Question 1
+# 2021 Mock Test (Deliveries & Baking)
+
+## Question 1: Delivery Report (Arrays)
+
+### 📋 Question 1 Project Overview
+
+A Java program that displays a 3-month delivery report for 3 years. It processes a 2D array to print the rows/columns and calculate the average, maximum, and minimum deliveries.
+
+**Features:**
+*   **2D Array**: Stores 3 years (rows) x 3 months (columns).
+*   **Loops**: Iterates to find totals for the average, and checks for min/max.
+*   **Formatting**: Uses `printf` to align the output exactly like the sample.
+
+### Question 1 Screenshots
 
 <div>
   <img width="321" height="461" alt="Screenshot 2026-09-26 163055" src="https://github.com/user-attachments/assets/6213c4a1-b4fd-43dc-83c3-e978365327d1" />
@@ -66,7 +135,21 @@
   <img width="507" height="535" alt="Screenshot 2026-09-26 163138" src="https://github.com/user-attachments/assets/181ba5b4-02e6-47ab-bd84-0c41107c2a3b" />
 </div>
 
-### Question 2
+---
+
+## Question 2: Baking Application (OOP)
+
+### 📋 Question 2 Project Overview
+
+A console application that captures baking ingredients and prints them. Demonstrates a full OOP hierarchy.
+
+**Features:**
+*   **Interface**: `iRecipes` contains the `PrintRecipes()` method.
+*   **Abstract Class**: `Recipes` stores the ingredients, time, and difficulty, and implements `iRecipes`.
+*   **Subclass**: `ProcessRecipes` extends `Recipes` and overrides `PrintRecipes()` to display the output.
+*   **Main Class**: `BakingApplication` takes user input and instantiates the subclass.
+
+### Question 2 Screenshots
 
 <div>
   <img width="329" height="484" alt="Screenshot 2026-09-26 163201" src="https://github.com/user-attachments/assets/66369055-1511-45b3-9603-ee65fcb0503f" />
@@ -78,21 +161,49 @@
 
 ---
 
-## 2026 Mock Test Screenshots
+# 2026 Mock Test (Cricket)
 
-### Question 1
+## Question 1: Highest Runs Scored (Arrays)
+
+### 📋 Question 1 Project Overview
+
+A Java program that displays the total runs scored by three different batsmen at three stadiums. It uses arrays to process the data and determine the stadium with the highest runs scored.
+
+**Features:**
+*   **Single & Multi-Dimensional Arrays**: Uses a 1D array for the stadiums and a 2D array for the runs scored by each player.
+*   **Loops**: Iterates through the arrays to calculate the total runs per stadium and per player.
+*   **Logic Decision**: Determines which stadium has the highest total runs and prints it.
+
+### Question 1 Screenshots
+
 <div>
   <img width="469" height="355" alt="Screenshot 2026-09-26 151402" src="https://github.com/user-attachments/assets/791ab872-efd3-44b0-ab81-b8218c96a2b4" />
 </div>
-<img width="469" height="355" alt="Screenshot 2026-09-26 151402" src="https://github.com/user-attachments/assets/5f65072b-c804-4258-a0be-6257946bac81" />
+
+<div>
+  <img width="469" height="355" alt="Screenshot 2026-09-26 151402" src="https://github.com/user-attachments/assets/5f65072b-c804-4258-a0be-6257946bac81" />
 </div>
 
 <div>
   <img width="386" height="576" alt="Screenshot 2026-09-26 151432" src="https://github.com/user-attachments/assets/371e42dc-b4a2-4500-89d0-eb8b1b8bf7e9" />
 </div>
 
+---
 
-### Question 2
+## Question 2: Cricket Report (OOP)
+
+### 📋 Question 2 Project Overview
+
+A console application that records and prints the total runs scored by a batsman at a stadium. Demonstrates the use of interfaces, abstract classes, and inheritance.
+
+**Features:**
+*   **Interface**: `ICricket` declares the getter methods.
+*   **Abstract Class**: `Cricket` stores the batsman's name, stadium, and runs, and implements the interface.
+*   **Subclass**: `CricketRunsScored` extends `Cricket` and implements the `printReport()` method.
+*   **Main Class**: `RunApplication` captures user input and instantiates the subclass.
+
+### Question 2 Screenshots
+
 <div>
   <img width="376" height="486" alt="Screenshot 2026-09-26 151917" src="https://github.com/user-attachments/assets/e3e8d5b3-7cf7-4d15-ae77-1c6c064ee2d0" />
 </div>
