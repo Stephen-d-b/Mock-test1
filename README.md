@@ -80,11 +80,7 @@ When you think you are done with the exam, do NOT just close the window. Run thr
    * Click every button. Does it crash?
    * Are the `.txt` files being generated in the project folder?
    * Do the JUnit tests pass with a green bar?
-3. **The Exam Submission Document (MS Word / Notepad):**
-   * Did you create the file named exactly: `StudentNumber_PROG6112_Exam.docx`?
-   * Did you include the **link to your designated space** (e.g., the Azure Lab drive or your GitHub repo link)?
-4. **LMS Upload:**
-   * Did you upload the Word document to the correct submission link on Learn?
-   * Double-check that the file actually finished uploading before you close your browser.
+3. **The Exam Submission :**
+   * DID YOU SUBMIT THE CORRECT LING?
 
 *Created for PROG6112 exam revision.*
