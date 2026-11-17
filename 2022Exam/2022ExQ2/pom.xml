@@ -8,6 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>25</maven.compiler.release>
-        <exec.mainClass>com.mycompany.exq2.App</exec.mainClass>
+        <exec.mainClass>com.mycompany.exq2.Question2</exec.mainClass>
     </properties>
 </project>
