@@ -96,7 +96,6 @@ This is a Java console application designed to process average property prices a
 3. The output will print directly to the NetBeans console, matching the required report format exactly.
 
 ---
-
 ## 📸 Question 2 Screenshots
 
 <div>
@@ -115,3 +114,66 @@ This is a Java console application designed to process average property prices a
 </div>
 
 <br>
+
+## 📋 Question 3 Project Overview
+
+This is a Java GUI application designed to capture travel information between two locations. It allows users to select a start location, end location, and travel type, validates the input to ensure the locations are different, and saves the data to a sequential text file.
+
+### Features:
+*   **GUI Form**: Built with Java Swing (JFrame) featuring three combo boxes, a submit button, and a text area to display the travel log.
+*   **Validation**: Prevents the user from selecting the same start and end location. Displays a popup error message if they do.
+*   **File I/O (Writing)**: Saves the travel information to `travel.txt` in a comma-separated format.
+*   **File I/O (Reading)**: Reads the `travel.txt` file and populates the text area with the formatted travel log upon submission and application startup.
+
+---
+
+## 📂 Question 3 File Structure
+
+| File Name | Description |
+| :--- | :--- |
+| **`frmTravel.java`** | The main GUI class (JFrame). It handles the dropdown selections, validates input, handles file reading/writing, and contains the `main` method. |
+| **`travel.txt`** | The generated text file that stores the travel logs sequentially. |
+
+---
+
+## 🚀 How to Run Question 3
+
+1. Open the project in **NetBeans**.
+2. Run the `frmTravel.java` file.
+3. Select a Start Location, End Location, and Travel Type. Click **SUBMIT**.
+4. The travel log will appear in the text area, and a `travel.txt` file will be created in your project folder.
+5. Try selecting the same location for Start and End. Click **SUBMIT**. The error message will pop up.
+
+---
+
+## 📸 Question 3 Screenshots
+
+<div>
+  <img width="587" height="743" alt="Screenshot 2026-11-17 144624" src="https://github.com/user-attachments/assets/d8f7dd30-58dc-4dce-972b-7bc82cdd9b6d" />
+
+</div>
+
+<br>
+
+<div>
+  <img width="610" height="565" alt="Screenshot 2026-11-17 144632" src="https://github.com/user-attachments/assets/df5ddc1a-2737-4d4e-a78b-d531697ae5d1" />
+
+</div>
+
+---
+## Question 3 Rubrics
+
+<div>
+<img width="581" height="274" alt="Screenshot 2026-11-17 144637" src="https://github.com/user-attachments/assets/267dd121-ba62-49e2-8231-532ab2f3952b" />
+
+</div>
+
+<br>
+
+<div>
+<img width="551" height="365" alt="Screenshot 2026-11-17 144641" src="https://github.com/user-attachments/assets/a389f38d-11b6-4e9e-ab21-b26f841b0610" />
+
+</div>
+
+<br>
+
