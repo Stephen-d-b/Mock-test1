@@ -1,5 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt
  */
 
 package com.mycompany.progcheetsheet;
@@ -18,40 +18,45 @@ SECTION   TOPIC
 ----------------------------------------------------------------
   0.  Imports (and cool tricks you can use in imports like *)
   1.  Printing (println, print, printf)
-  2.  Variables & Data Types
-  3.  If / Else If / Else
-  4.  Switch Statement
-  5.  For Loop
-  6.  For-Each Loop (Enhanced For)
-  7.  While Loop
-  8.  Do-While Loop
-  9.  Single-Dimensional Arrays
- 10.  Two-Dimensional Arrays
- 11.  ArrayList
- 12.  Methods (with arguments & return values)
- 13.  Classes & Objects (Creating Objects)
- 14.  Constructors
- 15.  Getters & Setters
- 16.  Encapsulation
- 17.  Inheritance (extends, super)
- 18.  Abstract Classes
- 19.  Concrete Classes
- 20.  Interfaces
- 21.  Polymorphism
- 22.  Try-Catch (Error Handling)
- 23.  Scanner (Keyboard Input)
- 24.  JOptionPane (showInputDialog & showMessageDialog)
- 25.  Parsing with Integer.parseInt & Double.parseDouble
- 26.  DecimalFormat (Formatting to .00)
- 27.  Validations (Input, Range, Null)
- 28.  Alternative Ways of Parsing Items Using Arrays
- 29.  OOP Chain: Interface -> Abstract -> Concrete -> Main
- 30.  Finding the Highest - Manual vs Loop
- 31.  Grand Total Across a 2D Array
- 32.  Full Report Formatting (Exact Output Match)
- 33.  Comments + File Saving (Rubric Marks)
- 34.  Summary Table - Which One Do I Use?
- 35.  Exam Tips (Very Important)
+  2.  PrintF in Details (The Golden Rule)
+  3.  Variables & Data Types
+  4.  If / Else If / Else
+  5.  Switch Statement
+  6.  For Loop
+  7.  For-Each Loop (Enhanced For)
+  8.  While Loop
+  9.  Do-While Loop
+ 10.  Single-Dimensional Arrays
+ 11.  Two-Dimensional Arrays
+ 12.  ArrayList
+ 13.  Methods (with arguments & return values)
+ 14.  Classes & Objects (Creating Objects)
+ 15.  Constructors
+ 16.  Getters & Setters
+ 17.  Encapsulation
+ 18.  Inheritance (extends, super)
+ 19.  Abstract Classes
+ 20.  Concrete Classes
+ 21.  Interfaces
+ 22.  Polymorphism
+ 23.  Try-Catch (Error Handling)
+ 24.  Scanner (Keyboard Input)
+ 25.  JOptionPane (showInputDialog & showMessageDialog)
+ 26.  Parsing with Integer.parseInt & Double.parseDouble
+ 27.  DecimalFormat (Formatting to .00)
+ 28.  Validations (Input, Range, Null)
+ 29.  Alternative Ways of Parsing Items Using Arrays
+ 30.  OOP Chain: Interface -> Abstract -> Concrete -> Main
+ 31.  Finding the Highest - Manual vs Loop
+ 32.  Grand Total Across a 2D Array
+ 33.  Full Report Formatting (Exact Output Match)
+ 34.  Comments + File Saving (Rubric Marks)
+ 35.  File I/O (Reading & Writing to .txt Files)
+ 36.  JUnit Testing (Required in 2023 & 2024 Exams)
+ 37.  NetBeans GUI Boilerplate (Critical for Q2)
+ 38.  Error Messages & Popups (JOptionPane)
+ 39.  Summary Table - Which One Do I Use?
+ 40.  Exam Tips (Very Important)
 ----------------------------------------------------------------
 
 ================================================================
@@ -107,7 +112,31 @@ WHEN TO USE IT:
 
 
 ================================================================
-2. VARIABLES & DATA TYPES
+2. PRINTF FORMATTING - THE GOLDEN RULE (CRITICAL FIX)
+================================================================
+WHY THIS IS IMPORTANT:
+    We crashed the code multiple times today because of this. 
+    If you get this wrong in the exam, you lose easy marks.
+
+THE RULE:
+    The dot (.) MUST ALWAYS come before the number of decimals.
+
+    ✅ CORRECT:
+    %,.0f  -> Adds commas, 0 decimals. e.g., 4,300,000
+    %,.1f  -> Adds commas, 1 decimal.  e.g., 4,300,000.0
+    %.2f   -> No commas, 2 decimals.   e.g., 1500.50
+
+    ❌ INCORRECT (WILL CRASH JAVA):
+    %,0f is WRONG (Missing dot). 
+    %12,1f is WRONG (Missing dot).
+
+EXAMPLE:
+    System.out.printf("Total = R %,.0f\n", totalSales);
+    System.out.printf("Name: %-15s | Price: R %,.2f\n", name, price);
+
+
+================================================================
+3. VARIABLES & DATA TYPES
 ================================================================
 CODE:
     int age = 25;
@@ -132,7 +161,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-3. IF / ELSE IF / ELSE
+4. IF / ELSE IF / ELSE
 ================================================================
 CODE:
     if (mark >= 50) {
@@ -154,7 +183,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-4. SWITCH STATEMENT
+5. SWITCH STATEMENT
 ================================================================
 CODE:
     switch (choice) {
@@ -181,7 +210,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-5. FOR LOOP
+6. FOR LOOP
 ================================================================
 CODE:
     for (int i = 0; i < 5; i++) {
@@ -201,7 +230,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-6. FOR-EACH LOOP (Enhanced For Loop)
+7. FOR-EACH LOOP (Enhanced For Loop)
 ================================================================
 CODE:
     String[] cities = {"Cape Town", "Johannesburg", "Durban"};
@@ -236,7 +265,7 @@ WHEN NOT TO USE IT:
 
 
 ================================================================
-7. WHILE LOOP
+8. WHILE LOOP
 ================================================================
 CODE:
     int count = 0;
@@ -257,7 +286,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-8. DO-WHILE LOOP
+9. DO-WHILE LOOP
 ================================================================
 CODE:
     int num;
@@ -275,7 +304,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-9. SINGLE-DIMENSIONAL ARRAYS
+10. SINGLE-DIMENSIONAL ARRAYS
 ================================================================
 CODE:
     String[] cities = {"Cape Town", "Johannesburg", "Durban"};
@@ -300,7 +329,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-10. TWO-DIMENSIONAL ARRAYS
+11. TWO-DIMENSIONAL ARRAYS
 ================================================================
 CODE:
     int[][] accidents = new int[3][2];
@@ -336,7 +365,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-11. ARRAYLIST
+12. ARRAYLIST
 ================================================================
 CODE:
     import java.util.ArrayList;
@@ -374,7 +403,7 @@ DIFFERENCE FROM ARRAY:
 
 
 ================================================================
-12. METHODS (with arguments & return values)
+13. METHODS (with arguments & return values)
 ================================================================
 CODE:
     // No return value (void):
@@ -412,7 +441,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-13. CLASSES & OBJECTS (Creating Objects)
+14. CLASSES & OBJECTS (Creating Objects)
 ================================================================
 CODE:
     // 1. Define the class:
@@ -451,7 +480,7 @@ SYNTAX:
 
 
 ================================================================
-14. CONSTRUCTORS
+15. CONSTRUCTORS
 ================================================================
 CODE:
     public class Student {
@@ -478,7 +507,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-15. GETTERS & SETTERS
+16. GETTERS & SETTERS
 ================================================================
 CODE:
     public class Student {
@@ -518,7 +547,7 @@ TIP: In NetBeans, right-click inside the class -> Insert Code
 
 
 ================================================================
-16. ENCAPSULATION
+17. ENCAPSULATION
 ================================================================
 CODE:
     public class BankAccount {
@@ -552,7 +581,7 @@ THE 4 OOP PILLARS (memorize these!):
 
 
 ================================================================
-17. INHERITANCE (extends, super)
+18. INHERITANCE (extends, super)
 ================================================================
 CODE:
     // PARENT CLASS
@@ -597,7 +626,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-18. ABSTRACT CLASSES
+19. ABSTRACT CLASSES
 ================================================================
 CODE:
     public abstract class Animal {
@@ -647,7 +676,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-19. CONCRETE CLASSES
+20. CONCRETE CLASSES
 ================================================================
 CODE:
     public class Dog extends Animal {
@@ -676,7 +705,7 @@ DIFFERENCE:
 
 
 ================================================================
-20. INTERFACES
+21. INTERFACES
 ================================================================
 CODE:
     public interface IAnimal {
@@ -719,7 +748,7 @@ INTERFACE vs ABSTRACT CLASS:
 
 
 ================================================================
-21. POLYMORPHISM
+22. POLYMORPHISM
 ================================================================
 CODE:
     // Parent reference, child object:
@@ -753,7 +782,7 @@ TYPES OF POLYMORPHISM:
 
 
 ================================================================
-22. TRY-CATCH (Error Handling)
+23. TRY-CATCH (Error Handling)
 ================================================================
 CODE:
     try {
@@ -795,7 +824,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-23. SCANNER (Keyboard Input)
+24. SCANNER (Keyboard Input)
 ================================================================
 CODE:
     import java.util.Scanner;
@@ -835,7 +864,7 @@ EXAMPLE FIX:
 
 
 ================================================================
-24. JOPTIONPANE (showInputDialog & showMessageDialog)
+25. JOPTIONPANE (showInputDialog & showMessageDialog)
 ================================================================
 CODE:
     import javax.swing.JOptionPane;
@@ -867,7 +896,7 @@ WHEN TO USE IT:
 
 IMPORTANT NOTES:
     - showInputDialog ALWAYS returns a String.
-      So if you need a number, you MUST parse it (see topic 25).
+      So if you need a number, you MUST parse it (see topic 26).
     - If the user clicks Cancel or X, it returns null.
       Always check for null before using it!
 
@@ -882,7 +911,7 @@ SAFE EXAMPLE:
 
 
 ================================================================
-25. PARSING (Integer.parseInt & Double.parseDouble)
+26. PARSING (Integer.parseInt & Double.parseDouble)
 ================================================================
 CODE:
     String numText = "42";
@@ -916,7 +945,6 @@ WHAT IT DOES:
 WHEN TO USE IT:
     - EVERY time you use JOptionPane and need a number.
     - When the exam forbids using (int) or (double) casting.
-      (Casting like (double) is often marked as "AI" by examiners.)
 
 WHY NOT USE (double) or (int)?
     Casting works differently. Integer.parseInt is the PROPER way
@@ -929,7 +957,7 @@ WHAT IF THE USER TYPES SOMETHING WRONG?
 
 
 ================================================================
-26. DECIMALFORMAT (Formatting to .00)
+27. DECIMALFORMAT (Formatting to .00)
 ================================================================
 CODE:
     import java.text.DecimalFormat;
@@ -968,13 +996,9 @@ COMMON PATTERNS:
     "#,##0.00" -> 1,234.50   (thousands separator)
     "R#,##0.00"-> R1,234.50  (with R symbol)
 
-WHY USE DECIMALFORMAT INSTEAD OF CASTING?
-    Casting doesn't give you .00 formatting.
-    DecimalFormat is the PROPER tool the examiners want.
-
 
 ================================================================
-27. VALIDATIONS (Input, Range, Null)
+28. VALIDATIONS (Input, Range, Null)
 ================================================================
 CODE:
     // 1. Null check (JOptionPane cancel):
@@ -1034,7 +1058,7 @@ THE GOLDEN RULE:
 
 
 ================================================================
-28. ALTERNATIVE WAYS OF PARSING ITEMS USING ARRAYS
+29. ALTERNATIVE WAYS OF PARSING ITEMS USING ARRAYS
 ================================================================
 There are TWO main ways to store and process table-style data.
 Both work. The 2D array version is what most lecturers prefer
@@ -1218,7 +1242,7 @@ EXAM DECISION GUIDE
 
 
 ================================================================
-29. OOP CHAIN: INTERFACE -> ABSTRACT -> CONCRETE -> MAIN
+30. OOP CHAIN: INTERFACE -> ABSTRACT -> CONCRETE -> MAIN
 ================================================================
 This is the EXACT pattern from Mock Test Q2. You will likely
 see this again. Memorize the chain:
@@ -1320,7 +1344,7 @@ EXAM TIP:
 
 
 ================================================================
-30. FINDING THE HIGHEST - MANUAL vs LOOP
+31. FINDING THE HIGHEST - MANUAL vs LOOP
 ================================================================
 Both work, but the LOOP way is what the rubric wants because
 it scales to any number of rows/columns.
@@ -1449,7 +1473,7 @@ WHICH ONE SHOULD YOU USE IN THE EXAM?
 
 
 ================================================================
-31. GRAND TOTAL ACROSS A 2D ARRAY
+32. GRAND TOTAL ACROSS A 2D ARRAY
 ================================================================
 Q1 asks for "TOTAL RUNS AT STADIUMS". You need to sum
 everything in the 2D array.
@@ -1496,7 +1520,7 @@ WHEN TO USE IT:
 
 
 ================================================================
-32. FULL REPORT FORMATTING (EXACT OUTPUT MATCH)
+33. FULL REPORT FORMATTING (EXACT OUTPUT MATCH)
 ================================================================
 Both Q1 and Q2 require matching the sample output EXACTLY.
 Marks are lost for wrong dashes, asterisks, or spacing.
@@ -1549,7 +1573,7 @@ EXAM TIP:
 
 
 ================================================================
-33. COMMENTS + FILE SAVING (RUBRIC MARKS)
+34. COMMENTS + FILE SAVING (RUBRIC MARKS)
 ================================================================
 The rubric gives 5 marks for "application files saved correctly
 with comments". Don't lose these free marks!
@@ -1583,7 +1607,135 @@ EXAMPLE:
 
 
 ================================================================
-34. SUMMARY TABLE - WHICH ONE DO I USE?
+35. FILE I/O (READING & WRITING TO .TXT FILES)
+================================================================
+WHY THIS IS IMPORTANT:
+    The 2022, 2023, and 2024 exams all require saving a report 
+    to a text file and/or reading it back into a GUI or List.
+
+CODE - WRITING TO A FILE:
+    try (FileWriter fw = new FileWriter("report.txt", true); // true = APPEND (don't overwrite)
+         PrintWriter pw = new PrintWriter(fw)) {
+        
+        // Write data separated by commas (CSV format is easiest to read later)
+        pw.println("Data1,Data2,Data3");
+        pw.println(movieName + "," + tickets + "," + total);
+        
+    } catch (IOException e) {
+        System.out.println("Error saving file: " + e.getMessage());
+    }
+
+CODE - READING FROM A FILE:
+    try (Scanner scan = new Scanner(new File("report.txt"))) {
+        
+        // Loop through the file line by line
+        while (scan.hasNextLine()) {
+            String line = scan.nextLine();
+            
+            // Split the line into separate parts using the comma
+            String[] parts = line.split(","); 
+            
+            // Use the parts (e.g., parts[0], parts[1], parts[2])
+            System.out.println(parts[0] + " - " + parts[1]);
+        }
+        
+    } catch (FileNotFoundException e) {
+        // Ignore if the file doesn't exist yet (first run)
+    }
+
+
+================================================================
+36. JUNIT TESTING (REQUIRED IN 2023 & 2024 EXAMS)
+================================================================
+WHY THIS IS IMPORTANT:
+    Both recent exams ask for a test package with specific unit 
+    tests (e.g., "CalculatesSuccessfully", "ValidationTest").
+
+CODE - TEST CLASS TEMPLATE:
+    import org.junit.jupiter.api.Test;
+    import static org.junit.jupiter.api.Assertions.*;
+
+    public class MyLogicTest {
+        
+        // Create an instance of the class you are testing
+        MyLogicClass logic = new MyLogicClass();
+
+        // 1. Successful Calculation Test
+        @Test
+        public void CalculateTotal_ReturnsExpectedResult() {
+            // assertEquals(expected, actual, delta)
+            // Delta (0.01) is ONLY used for doubles to handle tiny rounding errors
+            assertEquals(342.0, logic.calculateTotal(3, 100.0), 0.01);
+        }
+
+        // 2. Validation Test (when the paper asks for it)
+        @Test
+        public void ValidationTest_ReturnsFalseForInvalidData() {
+            // assertFalse means we EXPECT the result to be false
+            assertFalse(logic.validateData(invalidData));
+            
+            // assertTrue means we EXPECT the result to be true
+            assertTrue(logic.validateData(validData));
+        }
+    }
+
+
+================================================================
+37. NETBEANS GUI BOILERPLATE (CRITICAL FOR Q2)
+================================================================
+WHY THIS IS IMPORTANT:
+    If you forget these lines, your GUI will open in the top-left 
+    corner, have no title, or your dropdowns will be empty.
+
+CODE - INSIDE THE CONSTRUCTOR:
+    public MyForm() {
+        initComponents(); // ALWAYS FIRST
+        
+        this.setTitle("Movie Tickets / Estate Agent"); // Sets the window name
+        this.setLocationRelativeTo(null);               // Centers the window on screen
+        
+        // Populate your Combo Boxes here:
+        cmbMovie.addItem("Napoleon"); 
+        cmbMovie.addItem("Oppenheimer");
+    }
+
+CODE - THE MAIN METHOD (If your form is the main class):
+    public static void main(String args[]) {
+        // NetBeans generated Look & Feel code (ignore)
+        
+        // This line launches the GUI:
+        java.awt.EventQueue.invokeLater(() -> new MyForm().setVisible(true));
+    }
+
+
+================================================================
+38. ERROR MESSAGES & POPUPS (JOPTIONPANE)
+================================================================
+WHY THIS IS IMPORTANT:
+    The exams explicitly ask you to display error messages 
+    (e.g., "Maximum inspection count reached!" or "Destinations cannot be the same!!!").
+
+CODE - SHOWING A POPUP MESSAGE:
+    import javax.swing.JOptionPane;
+
+    // Show an error/warning message
+    JOptionPane.showMessageDialog(this, "Maximum inspection count reached!");
+    
+    // Show an error message and STOP the code from continuing
+    if (start.equals(end)) {
+        JOptionPane.showMessageDialog(this, "Destinations cannot be the same!!!");
+        return; // Stops the method here!
+    }
+
+CODE - GETTING INPUT FROM A POPUP (Console style):
+    String name = JOptionPane.showInputDialog("Enter your name:");
+    if (name != null) { // Check if user didn't click Cancel
+        // Use the input
+    }
+
+
+================================================================
+39. SUMMARY TABLE - WHICH ONE DO I USE?
 ================================================================
 
 TASK                          | TOOL
@@ -1631,7 +1783,7 @@ Group per person (your mock style)  | separate 1D arrays per person
 
 
 ================================================================
-35. EXAM TIPS (VERY IMPORTANT)
+40. EXAM TIPS (VERY IMPORTANT)
 ================================================================
 1.  ALWAYS check for null after JOptionPane input.
 2.  ALWAYS wrap parseInt / parseDouble in try-catch.
