@@ -38,18 +38,16 @@ This is a Java console application designed to process movie ticket sales data f
 
 <br>
 
-<div>
-<img width="552" height="831" alt="Screenshot 2026-11-17 122203" src="https://github.com/user-attachments/assets/05a446e0-08dc-4301-8e2f-5c78004416d8" />
-
-</div>
-
-<br>
-
 *(Note: The exam requires the use of a 1D array for movie names, a 2D array for sales, and an interface called `IMovieTickets` with specific method signatures).*
 
 ---
 
 ## Question 1 Rubrics
+
+<div>
+<img width="552" height="831" alt="Screenshot 2026-11-17 122203" src="https://github.com/user-attachments/assets/05a446e0-08dc-4301-8e2f-5c78004416d8" />
+
+</div>
 
 <div>
 <img width="546" height="790" alt="Screenshot 2026-11-17 122209" src="https://github.com/user-attachments/assets/bf677ad3-ec98-410d-bfa4-4cfcc998ff72" />
