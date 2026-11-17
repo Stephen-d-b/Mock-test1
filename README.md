@@ -27,10 +27,14 @@ Here is a quick guide to finding the best template based on what the exam questi
     *   👉 Look at `2025Exam/Q1` (IProduct), `2023Exam/Q1` (IEstateAgent), or `2024Exam/Q1` (IMovieTickets).
 *   **If they ask for a GUI with Combo Boxes, Text Fields, and Menus (File/Tools):**
     *   👉 Look at `2023Exam/Q2` (Estate Agent) or `2024Exam/Q2` (Movie Tickets).
-*   **If they ask for a GUI that saves to a `.txt` file and reads from it:**
-    *   👉 Look at `2022Exam/Q3` (Travel Log) or `2025Exam/Q2` (Product Sales).
 *   **If they ask to capture data into parallel 1D arrays (with a limit of 5):**
     *   👉 Look at `2022Exam/Q1` (Hospital Inspections).
+*   **If they ask to WRITE to a `.txt` file from a GUI:**
+    *   👉 Look at `2022Exam/Q3` (Travel Log) or `2023Exam/Q2` (Estate Agent Report).
+*   **If they ask to WRITE to a `.txt` file from a CONSOLE app:**
+    *   👉 Look at the `Main.java` file in `2022Exam/Q2` or `2023Exam/Q1` (Though these don't specifically write files, you will use the standard `FileWriter`/`PrintWriter` block from the Cheat Sheet).
+*   **If they ask to READ from a `.txt` file and display it (Console or GUI):**
+    *   👉 Look at the `loadDataFromFile()` method in `2022Exam/Q3` (Travel Log).
 *   **If they ask for specific JUnit Tests (like "Validation Test" or "CalculatesSuccessfully"):**
     *   👉 Look in the `test` package of `2023Exam/Q2` or `2024Exam/Q1`.
 *   **If they ask for VAT or percentage calculations:**
