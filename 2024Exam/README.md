@@ -157,7 +157,7 @@ Here is a breakdown of the classes created for this solution:
 <br>
 
 <div>
-![Uploading Screenshot 2026-11-17 122457.png…]()
+<img width="616" height="201" alt="Screenshot 2026-11-17 122457" src="https://github.com/user-attachments/assets/8609aa36-8634-41c2-974c-94b1b787978a" />
 
 </div>
 
