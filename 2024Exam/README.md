@@ -62,10 +62,7 @@ This is a Java console application designed to process movie ticket sales data f
 </div>
 
 <br>
----
----
 
-Question 2
 
 ## 📋 Question 2 Project Overview
 
@@ -167,4 +164,4 @@ Here is a breakdown of the classes created for this solution:
 <br>
 
 ---
----
+
