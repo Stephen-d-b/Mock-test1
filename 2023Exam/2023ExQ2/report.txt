@@ -1,0 +1,8 @@
+ESTATE AGENT REPORT
+**************************************************
+AGENT LOCATION: Cape Town
+AGENT NAME: Joe Bloggs
+PROPERTY PRICE: R 800000.0
+COMMISSION PERCENTAGE: 10.0%
+CALCULATED COMMISSION: R 80000.0
+**************************************************
