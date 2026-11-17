@@ -1,4 +1,4 @@
-# 2024 Exam - Question 1
+# 2024 Exam
 
 ## 📋 Question 1 Project Overview
 
