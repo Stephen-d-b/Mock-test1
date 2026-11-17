@@ -100,16 +100,6 @@ This is a Java console application designed to process average property prices a
 ## 📸 Question 2 Screenshots
 
 <div>
-  <img src="https://github.com/user-attachments/assets/your-image-link-here" width="500" alt="Question 2 Console Output">
-</div>
-
----
-
-# Question 2: Console Application
-
-## Question 2 Requirements
-
-<div>
 <img width="564" height="606" alt="Screenshot 2026-11-17 144414" src="https://github.com/user-attachments/assets/a5be29e0-db01-4515-a0fa-71b5c6c10ee4" />
 
 </div>
