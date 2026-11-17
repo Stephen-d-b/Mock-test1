@@ -53,11 +53,6 @@ This is a Java GUI application designed to capture and store hospital inspection
 
 <br>
 
-<div>
-  <img width="567" height="830" alt="Screenshot 2026-11-17 144158" src="https://github.com/user-attachments/assets/c0dbb83a-aa5d-4bf0-b954-80ab30915283" />
-
-</div>
-
 ---
 ## Question 1 Rubrics
 
