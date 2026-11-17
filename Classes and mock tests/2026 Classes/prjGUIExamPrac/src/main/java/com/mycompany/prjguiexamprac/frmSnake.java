@@ -1,0 +1,244 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package com.mycompany.prjguiexamprac;
+
+import java.util.ArrayList;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Stephen D
+ */
+public class frmSnake extends javax.swing.JFrame {
+    
+    private ArrayList<String> snakeName = new ArrayList<>();
+    private ArrayList<String> fatality = new ArrayList<>();
+    private ArrayList<String> medical = new ArrayList<>();
+    
+    
+    
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmSnake.class.getName());
+
+    /**
+     * Creates new form frmSnake
+     */
+    public frmSnake() {
+
+        initComponents();
+        this.setLocationRelativeTo(null); //Center GUI
+        callSnakes(); // load snake from text file into combo box
+        loadSnakes(); // load all snake information from the text file into array list.
+
+    }
+    
+    
+    private void callSnakes()
+    {
+        // showing differenct ways to load into text file
+        // do this code if a question says load from text file
+        
+        // this method loads only the snake names into the combo box
+        // the snake name is on the first line of every three lines in the text file
+        
+        try (BufferedReader br = new BufferedReader(new FileReader("snakes.txt")))
+        {
+            String line; //will store the current line read from the text file
+            int lineCount = 0; // counts the number of lines read
+            int nextTarget = 1; // start from the first line
+            
+            while ((line = br.readLine()) != null) // read until the ned of file
+            {
+                lineCount++; // increasing the line counter
+                
+                if(lineCount == nextTarget) // check if the current line contains a 
+                {
+                    cmbSnake.addItem(line.trim()); // add the snake name to the combo box
+                    nextTarget += 3; // then every 3d line after that
+                                     // (move to the next stnake name, three lines later)
+                }
+                
+            }
+        }
+        catch(IOException io)
+        {
+            JOptionPane.showMessageDialog(null, "Error reading file: " + io.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        // can put values into combo box like below if not loading from text file
+        
+        /* 
+            this.cbSnakes.addItem("Black Mamba");
+            this.cbSnakes.addItem("Boom Slang");
+            this.cbSnakes.addItem("Puff Adder");
+        */
+    }
+    
+    private void loadSnakes()
+    {
+        // this method loads all the snake information into the 3 arrayLists
+        
+        try
+        {
+            String strCurrentLine; // stores the current line read from the text file
+
+            // open the text file for reader
+            BufferedReader br = new BufferedReader(new FileReader("snakes.txt"));
+            
+            while((strCurrentLine = br.readLine()) != null)
+            {
+                snakeName.add(strCurrentLine); // reads each line and saves from text file into arraylist
+                strCurrentLine = br.readLine();
+                fatality.add(strCurrentLine);
+                strCurrentLine = br.readLine();
+                medical.add(strCurrentLine);
+            }
+            br.close(); // close after reading, NB!            
+        }
+        catch (IOException io)
+        {
+            JOptionPane.showMessageDialog(null, "The following error occured " + io.toString());
+        }
+        
+        // can have general exceptions aswell
+
+    }
+
+    private void searchSnakes()
+    {
+        int intSelect = this.cmbSnake.getSelectedIndex(); // get the index of the snake selected in the combobox
+        
+        if (intSelect >= 0 && intSelect <snakeName.size())
+        {
+            DefaultListModel<String> model = new DefaultListModel<>(); // needed for list box
+            model.addElement("Snake Name: " + snakeName.get(intSelect)); // add to list
+            model.addElement(fatality.get(intSelect));
+            model.addElement(medical.get(intSelect));
+            lstDisplay.setModel(model); // display list in list box
+        }
+    }
+    
+    private void clear()
+    {
+        this.cmbSnake.setSelectedIndex(0);
+        lstDisplay.setModel(new DefaultListModel<>()); // clear the list box
+    }
+    
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        lblSelect = new javax.swing.JLabel();
+        cmbSnake = new javax.swing.JComboBox<>();
+        btnProcess = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        scrollList = new javax.swing.JScrollPane();
+        lstDisplay = new javax.swing.JList<>();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblSelect.setText("Select Snake:");
+
+        btnProcess.setText("Process");
+        btnProcess.addActionListener(this::btnProcessActionPerformed);
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(this::btnClearActionPerformed);
+
+        scrollList.setViewportView(lstDisplay);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(scrollList)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSelect)
+                            .addComponent(btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmbSnake, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSelect)
+                    .addComponent(cmbSnake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnProcess)
+                    .addComponent(btnClear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollList, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+       
+        clear();
+
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
+        
+        searchSnakes();
+        
+    }//GEN-LAST:event_btnProcessActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new frmSnake().setVisible(true));
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JComboBox<String> cmbSnake;
+    private javax.swing.JLabel lblSelect;
+    private javax.swing.JList<String> lstDisplay;
+    private javax.swing.JScrollPane scrollList;
+    // End of variables declaration//GEN-END:variables
+}
