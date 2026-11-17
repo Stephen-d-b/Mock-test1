@@ -68,4 +68,23 @@ Every exam folder (e.g., `2022Exam`, `2023Exam`, `2024Exam`, `2025Exam`) follows
 5. Click the **Run** button (or press `F6`).
 
 ---
+
+## ⚠️ FINAL SUBMISSION CHECKLIST (Do not skip this!)
+
+When you think you are done with the exam, do NOT just close the window. Run through this checklist before submitting:
+
+1. **Did you comment your code?** (General Requirement: 3 marks)
+   * Did you put your Name, Student Number, and Question Number at the top of every file?
+   * Did you add comments explaining the logic?
+2. **Did you test the app?**
+   * Click every button. Does it crash?
+   * Are the `.txt` files being generated in the project folder?
+   * Do the JUnit tests pass with a green bar?
+3. **The Exam Submission Document (MS Word / Notepad):**
+   * Did you create the file named exactly: `StudentNumber_PROG6112_Exam.docx`?
+   * Did you include the **link to your designated space** (e.g., the Azure Lab drive or your GitHub repo link)?
+4. **LMS Upload:**
+   * Did you upload the Word document to the correct submission link on Learn?
+   * Double-check that the file actually finished uploading before you close your browser.
+
 *Created for PROG6112 exam revision.*
