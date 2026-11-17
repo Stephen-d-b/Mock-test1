@@ -69,3 +69,59 @@ This is a Java GUI application designed to capture and store hospital inspection
 </div>
 
 <br>
+
+## 📋 Question 2 Project Overview
+
+This is a Java console application designed to process average property prices across three different provinces. It uses a two-dimensional array to store prices for three property types (Flat, Townhouse, House) and calculates the average property price for each province.
+
+### Features:
+*   **2D Array Processing**: Uses a single-dimensional array for province names and a two-dimensional array for the property prices.
+*   **Calculations**: Calculates the total and average property prices per province.
+*   **Formatted Output**: Utilizes `String.format()` and `System.out.printf()` to display the data in a clean, aligned table with comma-separated thousands (e.g., R 1,433,333).
+
+---
+
+## 📂 Question 2 File Structure
+
+| File Name | Description |
+| :--- | :--- |
+| **`Question2.java`** | The main class. It holds the hardcoded 1D and 2D arrays, performs the average calculations, and prints the formatted report to the console. |
+
+---
+
+## 🚀 How to Run Question 2
+
+1. Open the project in **NetBeans**.
+2. Run the `Question2.java` file.
+3. The output will print directly to the NetBeans console, matching the required report format exactly.
+
+---
+
+## 📸 Question 2 Screenshots
+
+<div>
+  <img src="https://github.com/user-attachments/assets/your-image-link-here" width="500" alt="Question 2 Console Output">
+</div>
+
+---
+
+# Question 2: Console Application
+
+## Question 2 Requirements
+
+<div>
+<img width="564" height="606" alt="Screenshot 2026-11-17 144414" src="https://github.com/user-attachments/assets/a5be29e0-db01-4515-a0fa-71b5c6c10ee4" />
+
+</div>
+
+<br>
+---
+
+## Question 2 Rubrics
+
+<div>
+<img width="581" height="544" alt="Screenshot 2026-11-17 144422" src="https://github.com/user-attachments/assets/88339ba6-0045-40e2-8e08-6b58bf3e12e2" />
+
+</div>
+
+<br>
