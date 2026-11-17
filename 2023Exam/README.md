@@ -1,4 +1,4 @@
- # 2023 Exam - Question 1
+ # 2023 Exam
 
 ## 📋 Question 1 Project Overview
 
